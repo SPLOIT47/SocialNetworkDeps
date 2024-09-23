@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group='com.socialnetwork.deps'
+version='1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Implementation-Title': 'SocialNetworkDeps',
+                'Implementation-Version': version
+        )
+    }
+}
